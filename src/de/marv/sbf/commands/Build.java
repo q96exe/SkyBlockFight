@@ -12,7 +12,9 @@ public class Build implements CommandExecutor {
 
         Player p = (Player) sender;
 
+        if(cmd.getName().equalsIgnoreCase("build")) {
 
+        }
         return false;
     }
 }
