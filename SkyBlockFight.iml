@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="API" level="project" />
     <orderEntry type="library" name="spigot" level="project" />
+    <orderEntry type="library" name="API" level="project" />
   </component>
 </module>
