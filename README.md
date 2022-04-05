@@ -1,0 +1,3 @@
+This is a new Gamemode for our Minecraft network. 
+
+More later...
