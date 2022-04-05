@@ -37,7 +37,6 @@ public class Main extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
         //COMMANDS
         getCommand("setlobby").setExecutor(new SetLobby());
-        getCommand("setlobby").setExecutor(new SetLobby());
         getCommand("setspawn").setExecutor(new SetSpawn());
         //EVENTS
         pm.registerEvents(new JQListener(), this);
