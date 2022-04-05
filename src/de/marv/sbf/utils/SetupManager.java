@@ -22,10 +22,13 @@ public class SetupManager {
     }
 
     public void openSetupGUI(Player player) {
-        Inventory inventory = Bukkit.createInventory(null, 9*4, "§a§lSETUP");
+        Inventory inventory = Bukkit.createInventory(null, 9, "§a§lSETUP");
         setPlaceHolder(inventory);
 
-        //
+        inventory.setItem(1, new ItemBuilder(Material.BED).setDisplayname("§eTeams setzen").build());
+        inventory.setItem(3, new ItemBuilder(Material.BARRIER).setDisplayname("§cSoon").build());
+        inventory.setItem(5, new ItemBuilder(Material.BARRIER).setDisplayname("§cSoon").build());
+        inventory.setItem(7, new ItemBuilder(Material.BARRIER).setDisplayname("§cSoon").build());
 
         player.openInventory(inventory);
     }

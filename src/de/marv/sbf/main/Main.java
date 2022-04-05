@@ -1,6 +1,5 @@
 package de.marv.sbf.main;
 
-import de.marv.sbf.commands.Build;
 import de.marv.sbf.commands.SetLobby;
 import de.marv.sbf.commands.SetSpawn;
 import de.marv.sbf.listener.JQListener;
@@ -38,7 +37,6 @@ public class Main extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
         //COMMANDS
         getCommand("setlobby").setExecutor(new SetLobby());
-        getCommand("build").setExecutor(new Build());
         getCommand("setlobby").setExecutor(new SetLobby());
         getCommand("setspawn").setExecutor(new SetSpawn());
         //EVENTS
