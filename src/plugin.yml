@@ -3,7 +3,4 @@ author: q96 | Brewo
 name: SkyBlockFight
 version: 1.0
 commands:
-  setlobby:
-  setspawn:
-  build:
   setup:

@@ -1,6 +1,8 @@
 package de.marv.sbf.listener;
 
 import de.marv.sbf.utils.Data;
+import de.omel.api.itemstack.ItemBuilder;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,6 +14,8 @@ public class JQListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         e.setJoinMessage(Data.prefix + "§a§l" + e.getPlayer().getDisplayName() + " §7hat das Spiel §abetreten");
+
+        //TODO: Add standard Items & remove test items
     }
 
     @EventHandler

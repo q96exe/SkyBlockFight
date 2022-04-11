@@ -1,8 +1,9 @@
 package de.marv.sbf.main;
 
-import de.marv.sbf.commands.SetLobby;
-import de.marv.sbf.commands.SetSpawn;
+import de.marv.sbf.commands.Setup;
+import de.marv.sbf.listener.HotBarListener;
 import de.marv.sbf.listener.JQListener;
+import de.marv.sbf.listener.SetupListener;
 import de.marv.sbf.utils.Data;
 import de.marv.sbf.utils.LocationManager;
 import org.bukkit.Bukkit;
@@ -36,9 +37,10 @@ public class Main extends JavaPlugin {
     private void init() {
         PluginManager pm = Bukkit.getPluginManager();
         //COMMANDS
-        getCommand("setlobby").setExecutor(new SetLobby());
-        getCommand("setspawn").setExecutor(new SetSpawn());
+        getCommand("setup").setExecutor(new Setup());
         //EVENTS
         pm.registerEvents(new JQListener(), this);
+        pm.registerEvents(new SetupListener(), this);
+        pm.registerEvents(new HotBarListener(), this);
     }
 }
