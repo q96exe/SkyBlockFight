@@ -1,7 +1,8 @@
 package de.marv.sbf.main;
 
 import de.marv.sbf.commands.Setup;
-import de.marv.sbf.listener.HotBarListener;
+import de.marv.sbf.gamestates.GameState;
+import de.marv.sbf.gamestates.GameStateManager;
 import de.marv.sbf.listener.JQListener;
 import de.marv.sbf.listener.SetupListener;
 import de.marv.sbf.utils.Data;
@@ -16,6 +17,7 @@ public class Main extends JavaPlugin {
         return instance;
     }
     public static Main instance;
+    private GameStateManager gameStateManager;
 
     public LocationManager getLocationManager() {
         return locationManager;
@@ -26,6 +28,8 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         instance = this;
         init();
+        gameStateManager = new GameStateManager(this);
+        gameStateManager.setGameState(GameState.LOBBY_STATE);
         Bukkit.getConsoleSender().sendMessage(Data.prefix + "Das Plugin wurde §aerfolgreich aktiviert");
     }
 
@@ -41,6 +45,5 @@ public class Main extends JavaPlugin {
         //EVENTS
         pm.registerEvents(new JQListener(), this);
         pm.registerEvents(new SetupListener(), this);
-        pm.registerEvents(new HotBarListener(), this);
     }
 }
