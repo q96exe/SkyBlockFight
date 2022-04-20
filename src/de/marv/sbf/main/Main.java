@@ -46,4 +46,8 @@ public class Main extends JavaPlugin {
         pm.registerEvents(new JQListener(), this);
         pm.registerEvents(new SetupListener(), this);
     }
+
+    public GameStateManager getGameStateManager() {
+        return gameStateManager;
+    }
 }

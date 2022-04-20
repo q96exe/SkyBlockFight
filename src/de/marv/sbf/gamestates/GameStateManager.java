@@ -12,7 +12,7 @@ public class GameStateManager {
         this.instance = plugin;
         gameState = new GameState[3];
 
-        gameState[GameState.LOBBY_STATE] = new LobbyState();
+        gameState[GameState.LOBBY_STATE] = new LobbyState(this);
         gameState[GameState.INGAME_STATE] = new IngameState();
         gameState[GameState.ENDING_STATE] = new EndingState();
     }
@@ -33,5 +33,9 @@ public class GameStateManager {
 
     public GameState getCurrentGameState() {
         return currentGameState;
+    }
+
+    public Main getInstance() {
+        return instance;
     }
 }

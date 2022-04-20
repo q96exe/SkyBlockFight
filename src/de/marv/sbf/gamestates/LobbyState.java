@@ -1,13 +1,29 @@
 package de.marv.sbf.gamestates;
 
+import de.marv.sbf.countdowns.LobbyCountdown;
+
 public class LobbyState extends GameState {
+
+    public static final int minPlayers = 1;
+    public static final int maxPlayers = 12;
+
+    private LobbyCountdown lobbyCountdown;
+
+    public LobbyState(GameStateManager gameStateManager) {
+        lobbyCountdown = new LobbyCountdown(gameStateManager);
+    }
+
     @Override
     public void start() {
-        //TODO: Add function e.g. change MOTD
+        lobbyCountdown.startIdle();
     }
 
     @Override
     public void stop() {
-        //TODO: Add function e.g. change MOTD
+
+    }
+
+    public LobbyCountdown getLobbyCountdown() {
+        return lobbyCountdown;
     }
 }
