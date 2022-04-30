@@ -1,6 +1,7 @@
 package de.marv.sbf.main;
 
 import de.marv.sbf.commands.Setup;
+import de.marv.sbf.commands.Start;
 import de.marv.sbf.gamestates.GameState;
 import de.marv.sbf.gamestates.GameStateManager;
 import de.marv.sbf.listener.JQListener;
@@ -13,16 +14,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
+    public static Main instance;
     public static Main getInstance() {
         return instance;
     }
-    public static Main instance;
     private GameStateManager gameStateManager;
-
-    public LocationManager getLocationManager() {
-        return locationManager;
-    }
-    public LocationManager locationManager = new LocationManager();
 
     @Override
     public void onEnable() {
@@ -31,6 +27,7 @@ public class Main extends JavaPlugin {
         gameStateManager = new GameStateManager(this);
         gameStateManager.setGameState(GameState.LOBBY_STATE);
         Bukkit.getConsoleSender().sendMessage(Data.prefix + "Das Plugin wurde §aerfolgreich aktiviert");
+        Bukkit.getConsoleSender().sendMessage("§bAktueller GameState: " + gameStateManager.getCurrentGameState());
     }
 
     @Override
@@ -42,6 +39,7 @@ public class Main extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
         //COMMANDS
         getCommand("setup").setExecutor(new Setup());
+        getCommand("start").setExecutor(new Start());
         //EVENTS
         pm.registerEvents(new JQListener(), this);
         pm.registerEvents(new SetupListener(), this);

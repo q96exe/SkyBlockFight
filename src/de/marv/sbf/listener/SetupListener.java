@@ -1,10 +1,8 @@
 package de.marv.sbf.listener;
 
-import de.marv.sbf.commands.Setup;
 import de.marv.sbf.utils.Data;
 import de.marv.sbf.utils.LocationManager;
 import de.marv.sbf.utils.SetupManager;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -27,7 +25,6 @@ public class SetupListener implements Listener {
                 String mapItemName = event.getItem().getItemMeta().getDisplayName();
                 String[] parts = mapItemName.split(" ");
                 mapName = parts[parts.length - 1];
-                Bukkit.broadcastMessage("Map: " + mapName);
                 setupManager.openSetupGUI(event.getPlayer());
             }
         }
@@ -62,7 +59,6 @@ public class SetupListener implements Listener {
             locationManager.setLocation(mapName + ".rot.spawn", player.getLocation());
             player.sendMessage(Data.prefix + "Du hast den Spawn für " + event.getCurrentItem().getItemMeta().getDisplayName() + " §7gesetzt");
             player.playSound(player.getLocation(), Sound.LEVEL_UP, 2, 2);
-            Bukkit.broadcastMessage("Map: " + mapName);
         }
 
         if(event.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§eGelb") &&
