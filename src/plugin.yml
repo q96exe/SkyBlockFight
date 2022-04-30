@@ -4,3 +4,4 @@ name: SkyBlockFight
 version: 1.0
 commands:
   setup:
+  start:

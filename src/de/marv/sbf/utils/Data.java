@@ -8,11 +8,11 @@ public class Data {
 
     public static final String prefix = "§a§lSkyBlockFight §7✖ ";
     public static final String noperms = prefix + "§cDu hast dafür keine Berechtigung";
-    public static final String use = prefix + "Butte benutze: §a/";
+    public static final String use = prefix + "Bitte benutze: §a/";
 
-    private ArrayList<Player> players;
+    private static ArrayList<Player> players = new ArrayList<>();
 
-    public ArrayList<Player> getPlayers() {
+    public static ArrayList<Player> getPlayers() {
         return players;
     }
 }

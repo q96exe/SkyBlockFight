@@ -9,7 +9,7 @@ public class GameStateManager {
     private GameState currentGameState;
 
     public GameStateManager(Main plugin) {
-        this.instance = plugin;
+        instance = plugin;
         gameState = new GameState[3];
 
         gameState[GameState.LOBBY_STATE] = new LobbyState(this);
@@ -33,9 +33,5 @@ public class GameStateManager {
 
     public GameState getCurrentGameState() {
         return currentGameState;
-    }
-
-    public Main getInstance() {
-        return instance;
     }
 }
